@@ -23,4 +23,15 @@ public class LegalCustomerBusinessLogic {
     public static boolean deleteLegalCustomerById(String id) {
         return LegalCustomerConnectionDB.deleteLegalCustomerByID(id);
     }
+
+    public static int updateCustomer(LegalCustomer legalCustomer, String oldEconomicCode){
+        if(!legalCustomer.getEconomicCode().equals(oldEconomicCode) && !LegalCustomerConnectionDB.economicCodeExists(legalCustomer.getEconomicCode())){
+            if(LegalCustomerConnectionDB.updateLegalCustomer(legalCustomer))
+                return 1;
+        }else if(legalCustomer.getEconomicCode().equals(oldEconomicCode)){
+            if(LegalCustomerConnectionDB.updateLegalCustomer(legalCustomer))
+                return 1;
+        }
+        return -1;
+    }
 }

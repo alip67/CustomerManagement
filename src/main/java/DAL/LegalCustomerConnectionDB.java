@@ -30,15 +30,15 @@ public class LegalCustomerConnectionDB {
         try {
             preparedStatement = dbConnection.prepareStatement("Insert into customer value()");
             preparedStatement.executeUpdate();
-            ResultSet customerResult = preparedStatement.executeQuery("SELECT SCOPE_IDENTITY()");
+            ResultSet customerResult = preparedStatement.executeQuery("SELECT @@IDENTITY");
             customerResult.next();
             int customerId = customerResult.getInt(1);
             preparedStatement = dbConnection.prepareStatement("insert into legalcustomer "
                     + " values (?, ?, ?, ?)");
             preparedStatement.setInt(1, customerId);
             preparedStatement.setString(2, legalCustomer.getName());
-            preparedStatement.setDate(3, java.sql.Date.valueOf(legalCustomer.getRegisteringDate()));
-            preparedStatement.setString(4, legalCustomer.getEconomicCode());
+            preparedStatement.setString(3, legalCustomer.getEconomicCode());
+            preparedStatement.setDate(4, java.sql.Date.valueOf(legalCustomer.getRegisteringDate()));
             int resultNum = preparedStatement.executeUpdate();
             if (resultNum == 1) {
                 return customerId;
@@ -58,10 +58,10 @@ public class LegalCustomerConnectionDB {
                 query = query + " AND id= ?";
             }
             if (legalCustomer.getName() != null) {
-                query = query + " AND company_name=?";
+                query = query + " AND name=?";
             }
             if (legalCustomer.getEconomicCode() != null) {
-                query = query + " AND economic_code=?";
+                query = query + " AND economicCode=?";
             }
             preparedStatement = dbConnection.prepareStatement(query);
             int i = 1;
@@ -76,8 +76,8 @@ public class LegalCustomerConnectionDB {
             }
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                LegalCustomer lc = new LegalCustomer(resultSet.getString("customer_id"), resultSet.getString("company_name"), resultSet.getString("register_Date").toString(),
-                        resultSet.getString("economic_code"));
+                LegalCustomer lc = new LegalCustomer(resultSet.getString("customer_id"), resultSet.getString("name"), resultSet.getString("registeringDate").toString(),
+                        resultSet.getString("economicCode"));
                 customers.add(lc);
             }
         } catch (SQLException e) {
@@ -103,11 +103,11 @@ public class LegalCustomerConnectionDB {
     public static boolean updateLegalCustomer(LegalCustomer legalCustomer) {
         try {
             preparedStatement = dbConnection.prepareStatement("UPDATE legalcustomer\n" +
-                    "SET name=?,registeringDate=?, economicCode=?\n" +
+                    "SET name=?,economicCode=?,registeringDate=?\n" +
                     "WHERE customer_id=?;");
             preparedStatement.setString(1, legalCustomer.getName());
-            preparedStatement.setDate(2, java.sql.Date.valueOf(legalCustomer.getRegisteringDate()));
-            preparedStatement.setString(3, legalCustomer.getEconomicCode());
+            preparedStatement.setString(2, legalCustomer.getEconomicCode());
+            preparedStatement.setDate(3, java.sql.Date.valueOf(legalCustomer.getRegisteringDate()));
             preparedStatement.setInt(4, Integer.parseInt(legalCustomer.getId()));
             int result = preparedStatement.executeUpdate();
             if (result > 0)
@@ -123,8 +123,7 @@ public class LegalCustomerConnectionDB {
 
     public static boolean economicCodeExists(String economicCode) {
         try {
-            preparedStatement = dbConnection.prepareStatement("SELECT * FROM legalcustomer WHERE economicCode=?");
-            preparedStatement.setString(1, economicCode);
+            preparedStatement = dbConnection.prepareStatement("SELECT * FROM legalcustomer WHERE economicCode=" + economicCode);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (!resultSet.next())
                 return false;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    <meta charset="utf-8">
+    <title>Actual Customer Search</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body dir="rtl">
+<div id="wrapper">
+    <div id="sidebar-wrapper" >
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="#">جستجوی مشتری حقیقی</a></h1>
+
+            </div>
+            <hr>
+            <div id="menu" dir="rtl">
+                <ul >
+                    <li><a href="index.html">خانه</a></li>
+                    <br>
+                    <li ><a href="ActualCustomerRegistration.html">ثبت مشتری حقیقی</a></li>
+                    <br>
+                    <li ><a href="LegalCustomerRegistration.html">ثبت مشتری حقوقی</a></li>
+                    <br>
+                    <li class="current_page_item"><a href="ActualCustomerSearch.html">جستجوی مشتری حقیقی</a></li>
+                    <br>
+                    <li><a href="LegalCustomerSearch.html">جستجوی مشتری حقوقی</a></li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="post">
+            <h3 class="title1">جستجوی مشتری حقیقی</h3>
+            <div class="entry">
+
+                <div class="sidebar">
+                    <form method="get" action="ActualCustomerSearchServlet">
+                        <div class="inputRow" >
+                            <div class="label" >شماره مشتری:</div>
+                            <div class="input"><input class="input" type="text" name="CustomerId" size="20"></div>
+                        </div>
+                        <div class="inputRow" >
+                            <div class="label" >نام:</div>
+                            <div class="input"><input class="input" type="text" name="FirstName" size="20"></div>
+                        </div>
+                        <div class="inputRow" >
+                            <div class="label" >نام خانوادگی:</div>
+                            <div class="input"><input class="input" type="text" name="LastName" size="20"></div>
+                        </div>
+                        <div class="LastInputRow" >
+                            <div class="label">کد ملی:</div>
+                            <div class="input"><input class="input" type="text" name="NationalCode" size="20"></div>
+                        </div>
+                        <div>
+                            <div class="buttonDiv">
+                                <input class="button" type="submit" value="جستجو" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+

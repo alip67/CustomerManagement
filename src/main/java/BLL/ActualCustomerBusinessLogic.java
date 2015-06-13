@@ -3,6 +3,7 @@ package BLL;
 
 import DAL.ActualCustomer;
 import DAL.ActualCustomerConnectionDB;
+import util.U;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class ActualCustomerBusinessLogic {
 
     public static int registerCustomer(ActualCustomer actualCustomer) {
         if (!ActualCustomerConnectionDB.nationalCodeExists(actualCustomer.getNationalCode())) {
+            U.wl("a4");
             return ActualCustomerConnectionDB.insertActualCustomer(actualCustomer);
         }
         return -1;

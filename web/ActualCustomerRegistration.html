@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    <meta charset="utf-8">
+    <title>Actual Customer Management</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body dir="rtl">
+<div id="wrapper">
+    <div id="sidebar-wrapper" >
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="#">ثبت مشتری حقیقی</a></h1>
+
+            </div>
+            <hr>
+            <div id="menu" dir="rtl">
+                <ul >
+                    <li><a href="index.html">خانه</a></li>
+                    <br>
+                    <li class="current_page_item"><a href="ActualCustomerRegistration.html">ثبت مشتری حقیقی</a></li>
+                    <br>
+                    <li><a href="LegalCustomerRegistration.html">ثبت مشتری حقوقی</a></li>
+                    <br>
+                    <li><a href="ActualCustomerSearch.html">جستجوی مشتری حقیقی</a></li>
+                    <br>
+                    <li><a href="LegalCustomerSearch.html">جستجوی مشتری حقوقی</a></li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="post">
+            <h3 class="title1">ثبت مشتری حقیقی</h3>
+            <div class="entry">
+
+                <div class="sidebar">
+
+                    <form method="get" action="ActualCustomerRegistrationServlet">
+                        <div class="inputRow" >
+                            <div class="label" >نام:</div>
+                            <div class="input"><input class="input" type="text" name="FirstName" size="20"></div>
+                        </div>
+                        <div class="inputRow" >
+                            <div class="label" >نام خانوادگی:</div>
+                            <div class="input"><input class="input" type="text" name="LastName" size="20"></div>
+                        </div>
+                        <div class="inputRow" >
+                            <div class="label">نام پدر:</div>
+                            <div class="input"><input class="input" type="text" name="FatherName" size="20"></div>
+                        </div>
+                        <div class="inputRow" >
+                            <div class="label">تاریخ تولد:</div>
+                            <div class="input"><input class="input" type="text" name="DateOfBirthday" size="20"></div>
+                        </div>
+                        <div class="LastInputRow" >
+                            <div class="label">کد ملی:</div>
+                            <div class="input"><input class="input" type="text" name="NationalCode" size="20"></div>
+                        </div>
+                        <div>
+                            <div class="buttonDiv">
+                                <input class="button" type="submit" value="ثبت" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+

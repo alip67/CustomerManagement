@@ -3,4 +3,79 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+
+    <servlet>
+        <servlet-name>LegalCustomerRegistrationServlet</servlet-name>
+        <servlet-class>UI.LegalCustomerRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LegalCustomerRegistrationServlet</servlet-name>
+        <url-pattern>/LegalCustomerRegistrationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ActualCustomerRegistrationServlet</servlet-name>
+        <servlet-class>UI.ActualCustomerRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActualCustomerRegistrationServlet</servlet-name>
+        <url-pattern>/ActualCustomerRegistrationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ActualCustomerSearchServlet</servlet-name>
+        <servlet-class>UI.ActualCustomerSearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActualCustomerSearchServlet</servlet-name>
+        <url-pattern>/ActualCustomerSearchServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LegalCustomerSearchServlet</servlet-name>
+        <servlet-class>UI.LegalCustomerSearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LegalCustomerSearchServlet</servlet-name>
+        <url-pattern>/LegalCustomerSearchServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>LegalCustomerDeleteServlet</servlet-name>
+        <servlet-class>UI.LegalCustomerDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LegalCustomerDeleteServlet</servlet-name>
+        <url-pattern>/LegalCustomerDeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LegalCustomerUpdateServlet</servlet-name>
+        <servlet-class>UI.LegalCustomerUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LegalCustomerUpdateServlet</servlet-name>
+        <url-pattern>/LegalCustomerUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ActualCustomerDeleteServlet</servlet-name>
+        <servlet-class>UI.ActualCustomerDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActualCustomerDeleteServlet</servlet-name>
+        <url-pattern>/ActualCustomerDeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ActualCustomerUpdateServlet</servlet-name>
+        <servlet-class>UI.ActualCustomerUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActualCustomerUpdateServlet</servlet-name>
+        <url-pattern>/ActualCustomerUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

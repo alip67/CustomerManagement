@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActualCustomerConnectionDB {
-    private final static String DB_URL = "jdbc:mysql://localhost:3306/dbtest?useUnicode=true&characterEncoding=utf-8&connectTimeout=0&socketTimeout=0&autoReconnect=true";
+    private final static String DB_URL = "jdbc:mysql://localhost:3306/dbtest?useUnicode=true&characterEncoding=utf-8";
     private final static String USER_NAME = "root";
     private final static String PASSWORD = "root";
     static Connection dbConnection = null;
@@ -30,17 +30,17 @@ public class ActualCustomerConnectionDB {
         try {
             preparedStatement = dbConnection.prepareStatement("Insert into customer value()");
             preparedStatement.executeUpdate();
-            ResultSet customerResult = preparedStatement.executeQuery("SELECT SCOPE_IDENTITY()");
+            ResultSet customerResult = preparedStatement.executeQuery("SELECT @@IDENTITY");
             customerResult.next();
             int customerId = customerResult.getInt(1);
             preparedStatement = dbConnection.prepareStatement("insert into actualcustomer "
                     + " values (?, ?, ?, ?, ?, ?)");
             preparedStatement.setInt(1, customerId);
-            preparedStatement.setString(2, actualCustomer.getFirstName());
+            preparedStatement.setString(2, actualCustomer.getNationalCode());
             preparedStatement.setString(3, actualCustomer.getLastName());
-            preparedStatement.setString(4, actualCustomer.getFatherName());
-            preparedStatement.setDate(5, java.sql.Date.valueOf(actualCustomer.getDateOfBirthday()));
-            preparedStatement.setString(6, actualCustomer.getNationalCode());
+            preparedStatement.setString(4, actualCustomer.getFirstName());
+            preparedStatement.setString(5, actualCustomer.getFatherName());
+            preparedStatement.setDate(6, java.sql.Date.valueOf(actualCustomer.getDateOfBirthday()));
             int resultNum = preparedStatement.executeUpdate();
             if (resultNum == 1) {
                 return customerId;
@@ -132,6 +132,7 @@ public class ActualCustomerConnectionDB {
 
     public static boolean nationalCodeExists(String nationalCode) {
         try {
+
             preparedStatement = dbConnection.prepareStatement("SELECT * FROM actualcustomer WHERE nationalCode=" + nationalCode);
             ResultSet result = preparedStatement.executeQuery();
             if (!result.next())
