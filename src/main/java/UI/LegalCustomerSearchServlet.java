@@ -47,7 +47,7 @@ public class LegalCustomerSearchServlet extends HttpServlet {
                 "    </div>\n" +
                 "    <div id=\"content\">\n" +
                 "        <div class=\"post\">\n" +
-                "   <h3 class=\"title1\">جستجوی مشتری حقوقی</h3>\n"+
+                "   <h3 class=\"title1\">جستجوی مشتری حقوقی</h3>\n" +
                 "            <div class=\"entry\">");
         LegalCustomer legalCustomer = new LegalCustomer();
         if (request.getParameter("CustomerId").length() != 0)
@@ -88,17 +88,14 @@ public class LegalCustomerSearchServlet extends HttpServlet {
                     "                         function doUpdate(count)\n" +
                     "                        {\n" +
                     "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.target='_blank';\n" +
                     "                            form.action='LegalCustomerUpdateServlet';\n" +
                     "                            form.submit();\n" +
-                    "                            form.target='';\n" +
                     "                        }" +
                     "                         function doDelete(count)\n" +
                     "                        {\n" +
                     "                            form=document.getElementById(\"myform\"+count);\n" +
                     "                            form.action='LegalCustomerDeleteServlet';\n" +
                     "                            form.submit();\n" +
-                    "                            form.target='';\n" +
                     "                        }" +
                     "</script>");
             for (LegalCustomer legalCustomer1 : legalCustomers) {
@@ -115,27 +112,26 @@ public class LegalCustomerSearchServlet extends HttpServlet {
                         "                        <div class=\"td\">" +
                         "                        <p id=\"companyNameLabel" + counter + "\">" + legalCustomer.getName() + "</p>" +
                         "                        <input style=\"display:none\" type=\"text\" id=\"companyName" + counter + "\" name=\"companyName\" size=\"8\" value=\"" + legalCustomer.getName() + "\">" +
-                        "                        </div>\n");
-                out.println("                        <div class=\"td\">" +
+                        "                        </div>\n" +
+                        "             <div class=\"td\">" +
                         "                        <p id=\"registeringDateLabel" + counter + "\">" + legalCustomer.getRegisteringDate().substring(0, 10) + "</p>" +
                         "                        <input style=\"display:none\" type=\"text\" id=\"registeringDate" + counter + "\" name=\"registeringDate\" size=\"8\" value=\"" + legalCustomer.getRegisteringDate().substring(0, 10) + "\">" +
-                        "                        </div>\n");
-                out.println("                        <div class=\"td\">" +
+                        "                        </div>\n" +
+                        "                     <div class=\"td\">" +
                         "                        <p id=\"economicCodeLabel" + counter + "\">" + legalCustomer.getEconomicCode() + "</p>" +
                         "                        <input style=\"display:none\" type=\"text\" id=\"economicCode" + counter + "\" name=\"economicCode\" size=\"8\" value=\"" + legalCustomer.getEconomicCode() + "\">" +
-                        "                        </div>\n");
-                out.println(
+                        "                        </div>\n" +
                         "                        <div class=\"td\" id=\"choose" + counter + "\">\n" +
-                                "                            <a href=\"#\" onclick=\"visible(" + counter + ")\"><img src=\"file_edit.png\" style=\"margin-left: 5px\"></a>\n" +
-                                "                            <a  onclick=\"doDelete(" + counter + ")\"><img src=\"file_delete.png\"></a>\n" +
-                                "                        </div>\n" +
-                                "                        <div class=\"td\" style=\"display:none\" id=\"send" + counter + "\">" +
-                                "                           <div class=\"buttonDiv\">\n" +
-                                "                        <input class=\"tinButton\" type=\"submit\" value=\"ذخیره\" onclick=\"doUpdate(" + counter + ")\">\n" +
-                                "                   </div>" +
-                                "                        </div>" +
-                                "</form>" +
-                                "                    </div>");
+                        "                            <a href=\"#\" onclick=\"visible(" + counter + ")\"><img src=\"file_edit.png\" style=\"margin-left: 5px\"></a>\n" +
+                        "                            <a  onclick=\"doDelete(" + counter + ")\"><img src=\"file_delete.png\"></a>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"td\" style=\"display:none\" id=\"send" + counter + "\">" +
+                        "                           <div class=\"buttonDiv\">\n" +
+                        "                        <input class=\"tinButton\" type=\"submit\" value=\"ذخیره\" onclick=\"doUpdate(" + counter + ")\">\n" +
+                        "                   </div>" +
+                        "                        </div>" +
+                        "</form>" +
+                        "                    </div>");
             }
             out.println("</div>");
         }

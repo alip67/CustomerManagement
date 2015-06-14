@@ -3,7 +3,6 @@ package BLL;
 
 import DAL.ActualCustomer;
 import DAL.ActualCustomerConnectionDB;
-import util.U;
 
 import java.util.List;
 
@@ -11,7 +10,6 @@ public class ActualCustomerBusinessLogic {
 
     public static int registerCustomer(ActualCustomer actualCustomer) {
         if (!ActualCustomerConnectionDB.nationalCodeExists(actualCustomer.getNationalCode())) {
-            U.wl("a4");
             return ActualCustomerConnectionDB.insertActualCustomer(actualCustomer);
         }
         return -1;
@@ -21,7 +19,18 @@ public class ActualCustomerBusinessLogic {
         return ActualCustomerConnectionDB.selectActualCustomer(actualCustomer);
     }
 
-    public static boolean deleteRealCustomerById(String id) {
+    public static boolean deleteActualCustomerById(String id) {
         return ActualCustomerConnectionDB.deleteActualCustomerById(id);
+    }
+
+    public static int updateCustomer(ActualCustomer actualCustomer, String oldNationalCode) {
+        if (!actualCustomer.getNationalCode().equals(oldNationalCode) && !ActualCustomerConnectionDB.nationalCodeExists(actualCustomer.getNationalCode())) {
+            if (ActualCustomerConnectionDB.updateActualCustomer(actualCustomer))
+                return 1;
+        } else if (actualCustomer.getNationalCode().equals(oldNationalCode)) {
+            if (ActualCustomerConnectionDB.updateActualCustomer(actualCustomer))
+                return 1;
+        }
+        return -1;
     }
 }

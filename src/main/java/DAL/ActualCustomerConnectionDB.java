@@ -54,21 +54,20 @@ public class ActualCustomerConnectionDB {
     public static List<ActualCustomer> selectActualCustomer(ActualCustomer actualCustomer) {
         List<ActualCustomer> customers = new ArrayList<ActualCustomer>();
         try {
-
-            String query = "Select * from customer,actualcustomer where id=customer_id";
+            String queryString = "Select * from customer,actualcustomer where id=customer_id";
             if (actualCustomer.getId() != null) {
-                query = query + " AND id= ?";
+                queryString = queryString + " AND id= ?";
             }
             if (actualCustomer.getFirstName() != null) {
-                query = query + " AND first_name=?";
+                queryString = queryString + " AND first_name=?";
             }
             if (actualCustomer.getLastName() != null) {
-                query = query + " AND last_name=?";
+                queryString = queryString + " AND last_name=?";
             }
             if (actualCustomer.getNationalCode() != null) {
-                query = query + " AND national_code=?";
+                queryString = queryString + " AND national_code=?";
             }
-            preparedStatement = dbConnection.prepareStatement(query);
+            preparedStatement = dbConnection.prepareStatement(queryString);
             int i = 1;
             if (actualCustomer.getId() != null) {
                 preparedStatement.setInt(i++, Integer.parseInt(actualCustomer.getId()));
@@ -80,7 +79,7 @@ public class ActualCustomerConnectionDB {
                 preparedStatement.setString(i++, actualCustomer.getLastName());
             }
             if (actualCustomer.getNationalCode() != null) {
-                preparedStatement.setString(i++, actualCustomer.getNationalCode());
+                preparedStatement.setString(i, actualCustomer.getNationalCode());
             }
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

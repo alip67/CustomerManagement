@@ -60,8 +60,8 @@ public class ActualCustomerSearchServlet extends HttpServlet {
             actualCustomer.setLastName(request.getParameter("LastName"));
         if (request.getParameter("NationalCode").length() != 0)
             actualCustomer.setNationalCode(request.getParameter("NationalCode"));
-        List<ActualCustomer> realCustomers = ActualCustomerBusinessLogic.searchActualCustomer(actualCustomer);
-        if (realCustomers.isEmpty()) {
+        List<ActualCustomer> actualCustomers = ActualCustomerBusinessLogic.searchActualCustomer(actualCustomer);
+        if (actualCustomers.isEmpty()) {
             out.println("<div class=\"sidebar\">");
             out.println("<p class=\"textCenter\">موردی یافت نشد</p>");
             out.println("</div>");
@@ -98,20 +98,17 @@ public class ActualCustomerSearchServlet extends HttpServlet {
                     "                         function doUpdate(count)\n" +
                     "                        {\n" +
                     "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.target='_blank';\n" +
-                    "                            form.action='RealCustomerUpdateServlet';\n" +
+                    "                            form.action='ActualCustomerUpdateServlet';\n" +
                     "                            form.submit();\n" +
-                    "                            form.target='';\n" +
                     "                        }" +
                     "                         function doDelete(count)\n" +
                     "                        {\n" +
                     "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.action='RealCustomerDeleteServlet';\n" +
+                    "                            form.action='ActualCustomerDeleteServlet';\n" +
                     "                            form.submit();\n" +
-                    "                            form.target='';\n" +
                     "                        }" +
                     "</script>");
-            for (ActualCustomer actualCustomer0 : realCustomers) {
+            for (ActualCustomer actualCustomer0 : actualCustomers) {
                 counter++;
                 actualCustomer = actualCustomer0;
                 out.println("<div class=\"tr\" >\n" +
@@ -135,7 +132,7 @@ public class ActualCustomerSearchServlet extends HttpServlet {
                         "                        <input style=\"display:none\" type=\"text\" id=\"fatherName" + counter + "\" name=\"fatherName\" size=\"8\" value=\"" + actualCustomer.getFatherName() + "\">" +
                         "                        </div>\n" +
                         "                        <div class=\"td\">" +
-                        "                        <p id=\"birthDateLabel" + counter + "\">" + actualCustomer.getDateOfBirthday().substring(0, 10) + "</p>" +
+                        "                        <p id=\"birthdayDateLabel" + counter + "\">" + actualCustomer.getDateOfBirthday().substring(0, 10) + "</p>" +
                         "                        <input style=\"display:none\" type=\"text\" id=\"birthdayDate" + counter + "\" name=\"birthdayDate\" size=\"8\" value=\"" + actualCustomer.getDateOfBirthday().substring(0, 10) + "\">" +
                         "                        </div>\n" +
                         "                        <div class=\"td\">" +

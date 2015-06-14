@@ -72,11 +72,11 @@ public class LegalCustomerConnectionDB {
                 preparedStatement.setString(i++, legalCustomer.getName());
             }
             if (legalCustomer.getEconomicCode() != null) {
-                preparedStatement.setString(i++, legalCustomer.getEconomicCode());
+                preparedStatement.setString(i, legalCustomer.getEconomicCode());
             }
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                LegalCustomer lc = new LegalCustomer(resultSet.getString("customer_id"), resultSet.getString("name"), resultSet.getString("registeringDate").toString(),
+                LegalCustomer lc = new LegalCustomer(resultSet.getString("customer_id"), resultSet.getString("name"), resultSet.getString("registeringDate"),
                         resultSet.getString("economicCode"));
                 customers.add(lc);
             }
