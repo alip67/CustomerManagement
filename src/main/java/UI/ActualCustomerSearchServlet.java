@@ -11,9 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-/**
- * @author Maral Khojasteh
- */
+
 public class ActualCustomerSearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -84,7 +82,7 @@ public class ActualCustomerSearchServlet extends HttpServlet {
                 counter++;
                 actualCustomer = actualCustomer0;
                 out.println("<div class=\"tr\" >\n" +
-                        "<form method=\"get\" id=\"myform" + counter + "\">" +
+                        "<form method=\"get\" id=\"myForm" + counter + "\">" +
                         "                <input style=\"display:none\" type=\"text\" \" name=\"oldNationalCode\" size=\"8\" value=\"" + actualCustomer.getNationalCode() + "\">" +
                         "                        <div class=\"idtd\">" + counter + "</div>\n" +
                         "                        <div class=\"td\">" +

@@ -78,7 +78,7 @@ public class LegalCustomerSearchServlet extends HttpServlet {
                 counter++;
                 legalCustomer = legalCustomer1;
                 out.println("<div class=\"tr\" >\n" +
-                        "<form method=\"get\" id=\"myform" + counter + "\">" +
+                        "<form method=\"get\" id=\"myForm" + counter + "\">" +
                         "                <input style=\"display:none\" type=\"text\" \" name=\"oldEconomicCode\" size=\"8\" value=\"" + legalCustomer.getEconomicCode() + "\">" +
                         "                        <div class=\"idtd\">" + counter + "</div>\n" +
                         "                        <div class=\"td\">" +
