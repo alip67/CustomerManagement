@@ -30,7 +30,7 @@ public class LegalCustomerBusinessLogic {
                 return 1;
         }else if(legalCustomer.getEconomicCode().equals(oldEconomicCode)){
             if(LegalCustomerConnectionDB.updateLegalCustomer(legalCustomer))
-                return 1;
+                return -1;
         }
         return -1;
     }

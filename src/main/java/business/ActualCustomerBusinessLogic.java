@@ -29,7 +29,7 @@ public class ActualCustomerBusinessLogic {
                 return 1;
         } else if (actualCustomer.getNationalCode().equals(oldNationalCode)) {
             if (ActualCustomerConnectionDB.updateActualCustomer(actualCustomer))
-                return 1;
+                return -1;
         }
         return -1;
     }

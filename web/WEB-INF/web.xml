@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>LegalCustomerRegistrationServlet</servlet-name>
-        <servlet-class>ui.LegalCustomerRegistrationServlet</servlet-class>
+        <servlet-class>UI.LegalCustomerRegistrationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LegalCustomerRegistrationServlet</servlet-name>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>ActualCustomerRegistrationServlet</servlet-name>
-        <servlet-class>ui.ActualCustomerRegistrationServlet</servlet-class>
+        <servlet-class>UI.ActualCustomerRegistrationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ActualCustomerRegistrationServlet</servlet-name>
@@ -25,7 +25,7 @@
 
     <servlet>
         <servlet-name>ActualCustomerSearchServlet</servlet-name>
-        <servlet-class>ui.ActualCustomerSearchServlet</servlet-class>
+        <servlet-class>UI.ActualCustomerSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ActualCustomerSearchServlet</servlet-name>
@@ -34,7 +34,7 @@
 
     <servlet>
         <servlet-name>LegalCustomerSearchServlet</servlet-name>
-        <servlet-class>ui.LegalCustomerSearchServlet</servlet-class>
+        <servlet-class>UI.LegalCustomerSearchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LegalCustomerSearchServlet</servlet-name>
@@ -44,7 +44,7 @@
 
     <servlet>
         <servlet-name>LegalCustomerDeleteServlet</servlet-name>
-        <servlet-class>ui.LegalCustomerDeleteServlet</servlet-class>
+        <servlet-class>UI.LegalCustomerDeleteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LegalCustomerDeleteServlet</servlet-name>
@@ -52,7 +52,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>LegalCustomerUpdateServlet</servlet-name>
-        <servlet-class>ui.LegalCustomerUpdateServlet</servlet-class>
+        <servlet-class>UI.LegalCustomerUpdateServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -62,7 +62,7 @@
 
     <servlet>
         <servlet-name>ActualCustomerDeleteServlet</servlet-name>
-        <servlet-class>ui.ActualCustomerDeleteServlet</servlet-class>
+        <servlet-class>UI.ActualCustomerDeleteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ActualCustomerDeleteServlet</servlet-name>
@@ -70,7 +70,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>ActualCustomerUpdateServlet</servlet-name>
-        <servlet-class>ui.ActualCustomerUpdateServlet</servlet-class>
+        <servlet-class>UI.ActualCustomerUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ActualCustomerUpdateServlet</servlet-name>

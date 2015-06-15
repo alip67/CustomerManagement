@@ -1,8 +1,7 @@
 package UI;
 
-import BLL.ActualCustomerBusinessLogic;
-import DAL.ActualCustomer;
-import util.U;
+import business.ActualCustomerBusinessLogic;
+import model.ActualCustomer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -55,10 +54,8 @@ public class ActualCustomerUpdateServlet extends HttpServlet {
                 "<div class=\"sidebar\">");
         ActualCustomer actualCustomer = new ActualCustomer(request.getParameter("id"), request.getParameter("firstName"), request.getParameter("lastName"),
                 request.getParameter("fatherName"), request.getParameter("birthdayDate"), request.getParameter("nationalCode"));
-        String oldnationalCode = request.getParameter("oldNationalCode");
         if (ActualCustomerBusinessLogic.updateCustomer(actualCustomer, request.getParameter("oldNationalCode")) != -1) {
             out.println("اطلاعات مشتری تغییر یافت");
-            U.wl(""+ActualCustomerBusinessLogic.updateCustomer(actualCustomer, request.getParameter("oldNationalCode")));
         } else {
             out.println("<p class=\"textCenter\">کد ملی تکراری است</p>");
             out.println("<p class=\"textCenter\"> مجددا تلاش کنید</p>");

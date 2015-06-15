@@ -1,7 +1,7 @@
 package UI;
 
-import BLL.ActualCustomerBusinessLogic;
-import DAL.ActualCustomer;
+import business.ActualCustomerBusinessLogic;
+import model.ActualCustomer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
