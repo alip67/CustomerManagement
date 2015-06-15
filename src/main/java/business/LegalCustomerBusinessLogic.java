@@ -1,7 +1,7 @@
-package BLL;
+package business;
 
-import DAL.LegalCustomer;
-import DAL.LegalCustomerConnectionDB;
+import model.LegalCustomer;
+import model.LegalCustomerConnectionDB;
 
 import java.util.List;
 

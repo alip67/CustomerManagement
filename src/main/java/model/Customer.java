@@ -1,4 +1,4 @@
-package DAL;
+package model;
 
 public abstract class Customer {
     private String id;

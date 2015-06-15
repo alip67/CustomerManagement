@@ -1,4 +1,4 @@
-package DAL;
+package model;
 
 public class ActualCustomer extends Customer {
     private String firstName;

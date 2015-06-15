@@ -1,8 +1,8 @@
-package BLL;
+package business;
 
 
-import DAL.ActualCustomer;
-import DAL.ActualCustomerConnectionDB;
+import model.ActualCustomer;
+import model.ActualCustomerConnectionDB;
 
 import java.util.List;
 

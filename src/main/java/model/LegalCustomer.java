@@ -1,4 +1,4 @@
-package DAL;
+package model;
 
 public class LegalCustomer extends Customer {
     private String name;
