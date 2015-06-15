@@ -73,31 +73,7 @@ public class LegalCustomerSearchServlet extends HttpServlet {
                     "                        <div class=\"htd\"></div>\n" +
                     "                    </div>");
             int counter = 0;
-            out.println("<script>\n" +
-                    "                        function visible(count){\n" +
-                    "                            document.getElementById(\"companyName\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"registeringDate\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"economicCode\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"send\"+ count).style.display=\"inline\";\n" +
-                    "\n" +
-                    "                            document.getElementById(\"companyNameLabel\"+count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"registeringDateLabel\"+count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"economicCodeLabel\"+ count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"choose\"+count).style.display=\"none\";\n" +
-                    "                        }\n" +
-                    "                         function doUpdate(count)\n" +
-                    "                        {\n" +
-                    "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.action='LegalCustomerUpdateServlet';\n" +
-                    "                            form.submit();\n" +
-                    "                        }" +
-                    "                         function doDelete(count)\n" +
-                    "                        {\n" +
-                    "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.action='LegalCustomerDeleteServlet';\n" +
-                    "                            form.submit();\n" +
-                    "                        }" +
-                    "</script>");
+            out.println("<script type=\"text/javascript\" src=\"LegalJavaScript.js\"></script>");
             for (LegalCustomer legalCustomer1 : legalCustomers) {
                 counter++;
                 legalCustomer = legalCustomer1;

@@ -79,35 +79,7 @@ public class ActualCustomerSearchServlet extends HttpServlet {
                     "                        <div class=\"htd\"></div>\n" +
                     "                    </div>");
             int counter = 0;
-            out.println("<script>\n" +
-                    "                        function visible(count){\n" +
-                    "                            document.getElementById(\"firstName\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"lastName\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"fatherName\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"birthdayDate\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"nationalCode\"+ count).style.display=\"inline\";\n" +
-                    "                            document.getElementById(\"send\"+ count).style.display=\"inline\";\n" +
-                    "\n" +
-                    "                            document.getElementById(\"firstNameLabel\"+count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"lastNameLabel\"+count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"fatherNameLabel\"+ count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"birthdayDateLabel\"+ count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"nationalCodeLabel\"+ count).style.display=\"none\";\n" +
-                    "                            document.getElementById(\"choose\"+count).style.display=\"none\";\n" +
-                    "                        }\n" +
-                    "                         function doUpdate(count)\n" +
-                    "                        {\n" +
-                    "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.action='ActualCustomerUpdateServlet';\n" +
-                    "                            form.submit();\n" +
-                    "                        }" +
-                    "                         function doDelete(count)\n" +
-                    "                        {\n" +
-                    "                            form=document.getElementById(\"myform\"+count);\n" +
-                    "                            form.action='ActualCustomerDeleteServlet';\n" +
-                    "                            form.submit();\n" +
-                    "                        }" +
-                    "</script>");
+            out.println("<script type=\"text/javascript\" src=\"ActualJavaScript.js\"></script>");
             for (ActualCustomer actualCustomer0 : actualCustomers) {
                 counter++;
                 actualCustomer = actualCustomer0;
@@ -145,7 +117,7 @@ public class ActualCustomerSearchServlet extends HttpServlet {
                         "                        </div>\n" +
                         "                        <div class=\"td\" style=\"display:none\" id=\"send" + counter + "\">" +
                         "                           <div class=\"buttonDiv\">\n" +
-                        "                        <input class=\"tinButton\" type=\"submit\" value=\"ثبت\" onclick=\"doUpdate(" + counter + ")\">\n" +
+                        "                        <input class=\"tinButton\" type=\"submit\" value=\"ذخیره\" onclick=\"doUpdate(" + counter + ")\">\n" +
                         "                   </div>" +
                         "                        </div>" +
                         "</form>" +
